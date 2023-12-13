@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import UsersItem from './UsersItem';
+import Card from '../../shared/components/UIElements/Card';
 
 const UsersList = (props) => {
   const UserUl = styled.ul`
@@ -16,7 +17,9 @@ const UsersList = (props) => {
   if (props.items.length === 0) {
     return (
       <div className='center'>
-        <h2>No users found</h2>
+        <Card>
+          <h2>No users found</h2>
+        </Card>
       </div>
     );
   }
