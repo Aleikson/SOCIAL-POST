@@ -68,7 +68,7 @@
     
     .navLinks button:hover,
     .navLinks button:active {
-      background: white;
+      background: #878AF5;
       color: #292929;
     }
   }
