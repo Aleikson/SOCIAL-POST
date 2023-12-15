@@ -2,18 +2,18 @@ import styled from 'styled-components';
 import UsersItem from './UsersItem';
 import Card from '../../shared/components/UIElements/Card';
 
-const UsersList = (props) => {
-  const UserUl = styled.ul`
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-    width: 90%;
-    max-width: 50rem;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  `;
+const UserUl = styled.ul`
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 90%;
+  max-width: 50rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
 
+const UsersList = (props) => {
   if (props.items.length === 0) {
     return (
       <div className='center'>

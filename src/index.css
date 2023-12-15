@@ -12,6 +12,27 @@ body {
   margin: 0;
 }
 
+.slideInLeft-enter {
+  transform: translateX(-100%);
+}
+
+.slideInLeft-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.slideInLeft-exit {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.slideInLeft-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 200ms;
+}
+
 .center {
   text-align: center;
   display: flex;
