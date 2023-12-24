@@ -1,5 +1,14 @@
+import styled from 'styled-components';
 import Card from '../../shared/components/UIElements/Card';
 import PlaceItem from './PlaceItem';
+
+const List = styled.ul`
+  list-style: none;
+  margin: 1rem auto;
+  padding: 0;
+  width: 90%;
+  max-width: 40rem;
+`;
 
 function PlaceList(props) {
   if (props.item.length === 0) {
@@ -14,7 +23,7 @@ function PlaceList(props) {
   }
 
   return (
-    <ul className='placeList'>
+    <List className='placeList'>
       {props.item.map((place) => (
         <PlaceItem
           key={place.id}
@@ -27,7 +36,7 @@ function PlaceList(props) {
           coordinates={place.location}
         />
       ))}
-    </ul>
+    </List>
   );
 }
 
