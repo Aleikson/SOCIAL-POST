@@ -1,0 +1,55 @@
+.placeItem {
+    margin: 1rem 0;
+  }
+  
+  .placeItemContent {
+    padding: 0;
+  }
+  
+  .placeItemInfo {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .placeItemImg {
+    width: 100%;
+    height: 12.5rem;
+    margin-right: 1.5rem;
+  }
+  
+  .placeItemImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .placeItemInfo h2,
+  .placeItemInfo h3,
+  .placeItemInfo p {
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .placeItemAction {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #ccc;
+  }
+  
+  .placeItemModalContent {
+    padding: 0;
+  }
+  
+  .placeItemModalActions {
+    text-align: right;
+  }
+  
+  .placeItemAction button,
+  .placeItemAction a {
+    margin: 0.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .placeItemImg {
+      height: 20rem;
+    } 
+  }
