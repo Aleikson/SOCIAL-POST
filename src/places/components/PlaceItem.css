@@ -47,6 +47,11 @@
   .placeItemAction a {
     margin: 0.5rem;
   }
+
+  .mapContainer {
+    height: 15rem;
+    width: 100%;
+  }
   
   @media (min-width: 768px) {
     .placeItemImg {
