@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Users />} />
           <Route path='/:userId/places' element={<UserPlaces />} />
-          <Route path='/place/new' element={<NewPlace />} />
+          <Route path='/places/new' element={<NewPlace />} />
         </Routes>
       </main>
     </BrowserRouter>
