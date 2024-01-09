@@ -3,6 +3,7 @@ import NewPlace from './places/pages/NewPlace';
 import Users from './user/pages/Users';
 import MainNavigation from './shared/components/Navigation/MainNavigation';
 import UserPlaces from './places/pages/UserPlaces';
+import UpdatePlace from './places/pages/UpdatePlace';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path='/' element={<Users />} />
           <Route path='/:userId/places' element={<UserPlaces />} />
           <Route path='/places/new' element={<NewPlace />} />
+          <Route path='/places/:placeId' element={<UpdatePlace />} />
         </Routes>
       </main>
     </BrowserRouter>
