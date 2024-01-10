@@ -7,6 +7,7 @@ import {
 import Button from '../../shared/components/FormElements/Button';
 import styled from 'styled-components';
 import { useForm } from '../../shared/hooks/form-hook';
+import { useEffect, useState } from 'react';
 
 const Form = styled.form`
   list-style: none;
@@ -36,23 +37,44 @@ const TEST = [
 ];
 
 function UpdatePlace() {
+  const [isLoading, setIsLoading] = useState(true);
   const placeId = useParams().placeId;
+
+  const [formState, inputHandler, setFormData] = useForm(
+    {
+      title: {
+        value: '',
+        isValid: false,
+      },
+      description: {
+        value: '',
+        isValid: false,
+      },
+    },
+    false
+  );
 
   const identifiedPlace = TEST.find((p) => p.id === placeId);
 
-  const [formState, inputHandler] = useForm(
-    {
-      title: {
-        value: identifiedPlace.title,
-        isValid: true,
-      },
-      description: {
-        value: identifiedPlace.description,
-        isValid: true,
-      },
-    },
-    true
-  );
+  useEffect(() => {
+    if (identifiedPlace) {
+      setFormData(
+        {
+          title: {
+            value: identifiedPlace.title,
+            isValid: true,
+          },
+          description: {
+            value: identifiedPlace.description,
+            isValid: true,
+          },
+        },
+        false,
+        true
+      );
+    }
+    setIsLoading(false);
+  }, [setFormData, identifiedPlace]);
 
   const placeUpdateSubmitHandler = (event) => {
     event.preventDefault();
@@ -63,6 +85,14 @@ function UpdatePlace() {
     return (
       <div className='center'>
         <h2>Could not find place!</h2>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className='center'>
+        <h2>Loading</h2>
       </div>
     );
   }
