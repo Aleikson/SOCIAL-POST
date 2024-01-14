@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Button from '../../shared/components/FormElements/Button';
 import Input from '../../shared/components/FormElements/Input';
 import Card from '../../shared/components/UIElements/Card';
@@ -8,8 +8,11 @@ import {
   VALIDATOR_MAXLENGTH,
   VALIDATOR_REQUIRE,
 } from '../../shared/util/validators';
+import { AuthContext } from '../../shared/context/authContext';
 
 function Auth() {
+  const auth = useContext(AuthContext);
+
   const [isLoginMode, setIsLoginMode] = useState(true);
 
   const [formState, inputHandler, setFormData] = useForm(
@@ -52,6 +55,7 @@ function Auth() {
 
   const authSubmit = (event) => {
     event.preventDefault();
+    auth.login();
   };
 
   return (
